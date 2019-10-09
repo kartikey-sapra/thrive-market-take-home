@@ -4,7 +4,7 @@ services:
     image: redis
     #        command: ["redis-server", "--appendonly", "yes"]
     volumes:
-      - ./redis-data:/data/
+      - ./data/redis-data:/data/
   web:
     build: .
     ports:

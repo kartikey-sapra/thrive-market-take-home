@@ -41,4 +41,4 @@ def load_data_from_file(file_name, redis_instance):
 
 if __name__ == "__main__":
     redis_inst = Redis()
-    load_data_from_file("substitution_1-0-0_20191007.jsonl", redis_inst)
+    load_data_from_file("data/substitution_1-0-0_20191007.jsonl", redis_inst)
