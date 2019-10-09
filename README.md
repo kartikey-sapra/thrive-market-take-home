@@ -1,1 +1,26 @@
 # thrive-market-take-home
+This is a item to item dockerised flask based recommendation service. Where given a product id list of recommended product id is returned.
+Product id to recommended product mapping is stored in redis as a hashset. In the following format.
+
+`{id -> {reco_id1: score, reco_id2: score}}`
+
+### Steps to build the project
+`git clone https://github.com/kartikey-sapra/thrive-market-take-home`
+
+`cd thrive-market-take-home`
+
+`docker-compose up --build`
+
+This will spin up following services  
+i. Redis docker where the redis dump is loaded  
+ii. Web service docker where the flask is run and port is forwarded to 5000  
+iii. Swagger UI where the `swagger.json` is loaded. To open swagger UI open localhost:5001 and enter `http://localhost:5001/swagger.json` as URL
+
+### Calling API
+`curl http://localhost:5000/recs?productid=19`  
+
+Returns  
+`{"status":200,"message":"recommendations for PID : 19","data":[8234,229,2031,3914,225,14349,8894,8227,14656,44,459,10337,8635,8230,10335,10336,10334,10332,462,10324]}`
+
+
+  
