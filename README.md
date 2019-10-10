@@ -37,5 +37,8 @@ No product id supplied
 Returns  
 `{"status":500,"message":"Error","data":[]}`
 
+### References
+Redis Docker compose: https://github.com/docker-library/redis/issues/111
+ 
 
   
