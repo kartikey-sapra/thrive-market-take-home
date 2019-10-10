@@ -10,14 +10,19 @@ class RecommendationResource(Resource):
     def __get_key(self, k):
         return self.PREFIX + str(k)
 
+    @staticmethod
+    def __get_error_resposne():
+        return {"status": 500, "message": "Error", "data": []}
+
     def get(self):
         """
            Get recommendation for the given product id
            :return: dict: status, message, data -> list of recommended products
         """
         product_id = request.args.get('productid')
+
         if product_id is None or product_id == "":
-            response_d = {"status": 500, "message": "Error", "data": []}
+            response_d = self.__get_error_resposne()
             return jsonify(response_d)
 
         try:
@@ -32,6 +37,6 @@ class RecommendationResource(Resource):
                 response_d = {"status": 200, "message": message, "data": recommended_ids}
         except Exception as e:
             print(e)
-            response_d = {"status": 500, "message": "Error", "data": []}
+            response_d = self.__get_error_resposne()
 
         return response_d
