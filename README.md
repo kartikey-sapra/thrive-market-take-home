@@ -17,10 +17,25 @@ ii. Web service docker where the flask is run and port is forwarded to 5000
 iii. Swagger UI where the `swagger.json` is loaded. To open swagger UI open localhost:5001 and enter `http://localhost:5001/swagger.json` as URL
 
 ### Calling API
+
+#### Successful Call
 `curl http://localhost:5000/recs?productid=19`  
 
 Returns  
 `{"status":200,"message":"recommendations for PID : 19","data":[8234,229,2031,3914,225,14349,8894,8227,14656,44,459,10337,8635,8230,10335,10336,10334,10332,462,10324]}`
+
+#### Product Id not found
+`curl http://localhost:5000/recs?productid=20`  
+
+Returns  
+`{"status":404,"message":"Error","data":[]}`
+
+#### Any other error 
+No product id supplied  
+`curl http://localhost:5000/recs?productid`  
+
+Returns  
+`{"status":500,"message":"Error","data":[]}`
 
 
   
