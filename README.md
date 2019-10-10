@@ -1,5 +1,5 @@
 # thrive-market-take-home
-This is a item to item dockerised flask based recommendation service. Where given a product id list of recommended product id is returned.
+This is a item to item dockerised flask based recommendation service. Where given a product id, a list of recommended product id's is returned.
 Product id to recommended product mapping is stored in redis as a hashset. In the following format.
 
 `{id -> {reco_id1: score, reco_id2: score}}`

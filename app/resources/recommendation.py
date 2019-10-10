@@ -16,7 +16,7 @@ class RecommendationResource(Resource):
            :return: dict: status, message, data -> list of recommended products
         """
         product_id = request.args.get('productid')
-        if product_id is None or len(product_id) == 0:
+        if product_id is None or product_id == "":
             response_d = {"status": 500, "message": "Error", "data": []}
             return jsonify(response_d)
 

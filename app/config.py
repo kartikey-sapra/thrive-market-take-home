@@ -6,6 +6,6 @@ class Config(object):
 
 
 class Configdb(Config):
-    REDIS = {"host": os.environ.get('DATABASE_USER') or "redis",
-                  "port": os.environ.get('DATABASE_USER') or 6379
-                  }
+    REDIS = {"host": os.environ.get('REDIS_HOST') or "redis",
+             "port": os.environ.get('REDIS_PORT') or 6379
+             }
