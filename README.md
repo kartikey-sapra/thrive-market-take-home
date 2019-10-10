@@ -16,6 +16,9 @@ i. Redis docker where the redis dump is loaded
 ii. Web service docker where the flask is run and port is forwarded to 5000  
 iii. Swagger UI where the `swagger.json` is loaded. To open swagger UI open localhost:5001 and enter `http://localhost:5001/swagger.json` as URL
 
+### Assumptions
+i. In case of errors API returns status code 200 but in json `"status"` key's value reflects the actual error
+
 ### Calling API
 
 #### Successful Call
